@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Futebol</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,.2);
+        }
+
+        .card h2 {
+            margin: 0;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .graficos {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .grafico {
+            flex: 1;
+            min-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 30px;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #eaeaea;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>⚽ Dashboard de Estatísticas de Futebol</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>Jogadores</h2>
+            <p id="totalJogadores">0</p>
+        </div>
+
+        <div class="card">
+            <h2>Total de Gols</h2>
+            <p id="totalGols">0</p>
+        </div>
+
+        <div class="card">
+            <h2>Artilheiro</h2>
+            <p id="artilheiro">-</p>
+        </div>
+
+    </div>
+
+    <div class="graficos">
+
+        <div class="grafico">
+            <h2>Gols por Jogador</h2>
+            <canvas id="graficoBarras"></canvas>
+        </div>
+
+        <div class="grafico">
+            <h2>Jogadores por Posição</h2>
+            <canvas id="graficoPizza"></canvas>
+        </div>
+
+    </div>
+
+    <h2>Ranking de Artilheiros</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Posição</th>
+                <th>Jogador</th>
+                <th>Gols</th>
+            </tr>
+        </thead>
+
+        <tbody id="ranking"></tbody>
+    </table>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
